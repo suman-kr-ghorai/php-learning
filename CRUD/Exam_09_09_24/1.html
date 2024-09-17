@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+<form action="">
+    <label for="subjects">Enter Subject:</label>
+    <select name="" id="subjects">
+        <option value="Math">Math</option>
+        <option value="Physics">Physics</option>
+        <option value="English">English</option>
+    </select>
+    Marks:<input type="number" id="marks">
+<button type="button" onclick="sub()" id="subm">Submit</button>
+<p id="msg"></p>
+</form>    
+<script>
+    let time=false;
+function sub(){
+    if(time){
+        document.getElementById('msg').textContent="*please wait 15sec…"
+    }
+
+    let subject=document.getElementById('subjects').value;
+    let marks=document.getElementById('marks').value;
+    document.getElementById('msg').textContent=`You entered ${marks} in ${subject}`
+    // document.getElementById('subm').disabled=true;
+    time=true;
+
+    setTimeout(function(){
+        document.getElementById('msg').textContent="*please wait 15sec…"
+       // document.getElementById('subm').disabled=false;
+       time=false;
+    },15000)
+}
+</script>
+
+</body>
+</html>

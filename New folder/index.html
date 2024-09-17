@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vote</title>
+    <script>
+        let lastVoteTime = 0;
+
+        function vote(buttonId) {
+            const currentTime = new Date().getTime();
+            const timeDiff = (currentTime - lastVoteTime) / 1000;
+
+            if (timeDiff < 10) {
+                document.getElementById("message").innerText = "Already voted. Please wait.";
+                return;
+            }
+
+            lastVoteTime = currentTime;
+            document.getElementById("message").innerText = "Thanks for voting... in 10 seconds";
+
+            // setTimeout(() => {
+            //     document.getElementById("message").innerText = "";
+            // }, 10000);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="vote('btn1')">PHP</button>
+    <button onclick="vote('btn2')">ASP</button>
+    <p id="message"></p>
+</body>
+</html>
