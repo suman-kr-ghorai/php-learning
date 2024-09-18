@@ -21,8 +21,8 @@ $result = mysqli_fetch_assoc($data);
 	Email: <input type="email" name="email" value="<?php echo $result['email']?>"><br>
 	Phone: <input type="number" name="phone" value="<?php echo $result['phone']?>"><br>
 	<input type="submit" name="submit" value="Update">
-	Gender: <input type="radio" name="gender" value="Male"<?php if($result['gender']=='Male'){echo 'checked'}?>>Male
-	        <input type="radio" name="gender" value="Female"<?php if($result['gender']=='Female'){echo 'checked'}?>>Female<br>
+	Gender: <input type="radio" name="gender" value="Male"<?php if($result['gender']=='Male'){echo 'checked';}?>>Male
+	        <input type="radio" name="gender" value="Female"<?php if($result['gender']=='Female'){echo 'checked';}?>>Female<br>
 	Degree: <select name="degree">
 			<option value=""<?php if($result['degree']==''){echo 'selected';}?>>Select</option>
 			<option value="B.Tech"<?php if($result['degree']=='B.Tech'){echo 'selected';}?>>B.Tech</option>
